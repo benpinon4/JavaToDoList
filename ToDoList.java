@@ -33,14 +33,18 @@ public class ToDoList {
                 case 2:
                     System.out.println("Please Enter The Item Number You Would Like to Remove");
                     int listItemNumber = sc.nextInt();
-                    String removedTask = toDList.remove(listItemNumber-1);
-                    System.out.println("You have removed " + removedTask );
+                    String removedTask = toDList.remove(listItemNumber - 1);
+                    System.out.println("You have removed " + removedTask);
                     System.out.println("=====================================");
                     break;
                 case 3:
-                    System.out.println("To Do List:");
-                    for (int i = 0; i < toDList.size(); i++) {
-                        System.out.println(i + 1 + ": " + toDList.get(i));
+                    if (toDList.size() <= 0) {
+                        System.out.println("There are no items in your To Do List.");
+                    } else {
+                        System.out.println("To Do List:");
+                        for (int i = 0; i < toDList.size(); i++) {
+                            System.out.println(i + 1 + ": " + toDList.get(i));
+                        }
                     }
                     break;
                 case 4:
@@ -50,7 +54,7 @@ public class ToDoList {
 
                     break;
                 default:
-                System.out.println("You entered an invalid character please try again");
+                    System.out.println("You entered an invalid character please try again");
                     break;
             }
 
